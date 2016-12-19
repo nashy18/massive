@@ -6,9 +6,9 @@
   "dependencies": {
     "express": "^4.14.0",
     "mysql": "^2.10.0",
-    "body-parser": "^1.15.2"
+    "body-parser": "^1.15.2",
 	"jsonwebtoken" : "^7.2.1",
-	"massive":"^2.5.0"
+	"massive": "^2.5.0"
   },
   "devDependencies": {},
   "scripts": {
