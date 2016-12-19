@@ -1,0 +1,20 @@
+{
+  "name": "massivejs-nodejs",
+  "version": "1.0.0",
+  "description": "Implementing Massive.JS in Node JS Application ",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mysql": "^2.10.0",
+    "body-parser": "^1.15.2"
+	"jsonwebtoken" : "^7.2.1",
+	"massive":"^2.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "avinashk",
+  "license": "ISC"
+}
