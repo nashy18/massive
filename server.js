@@ -1,36 +1,54 @@
 //Initiallising Global variables and node modules
-var massive = require("massive");
-var connString = "postgres://lvrdoxuc:VwTN5BlZm6blo02-JtmnhI0YbQBC6TtO@elmer.db.elephantsql.com:5432/lvrdoxuc";
+var express = require("express");
+var bodyParser = require("body-parser");
+//Getting Application Configuration
+var appConfig = require('./config/appSettings.json');
+var app = express();
+//Getting utility functions
+var utility = require('./common/utils')(appConfig);
+//To Store AuthToken
+const _authToken = appConfig.authToken;
 
-// connect to Massive and get the db instance. You can safely use the
-// convenience sync method here because its on app load
-// you can also use loadSync - it's an alias
-//var massiveInstance = massive.connectSync({ connectionString: connectionString })
-//app.set('db', massiveInstance);
-//var db = app.get('db');
-//console.log(massiveInstance);
+var _appExtensions = {};
+_appExtensions.app = app;
+_appExtensions.utility = utility;
+_appExtensions.appConfig = appConfig;
 
-var db = massive.connectSync({ connectionString: connString });
+//http://expressjs.com/en/guide/using-middleware.html
+app.use(express.static(__dirname + "/web"));
+app.use(bodyParser.json());
 
-var newUser = {
-    email: "test@test.com",
-    first: "Joe",
-    last: "Test"
-};
+//Setting JWT Secret Key
+app.set('superSecret', appConfig.authToken); // secret variable
 
-db.users.save(newUser, function (err, result) {
-    console.log(result);
+//Getting utility functions
+var jwtAuthorization = require('./security/jwtAuthorizationFilter')(_appExtensions);
+
+//Middleware: To be executed in between request and response
+app.use(function(req, res, next) {
+    console.log("Inside Middleware CORS");
+    //http://enable-cors.org/server_expressjs.html
+	//Enabling CORS -Starts
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, contentType,Content-Type, Accept, Authorization");
+    //Enabling CORS -Ends
+
+    //Calling function for JWT Authentication
+	jwtAuthorization.OnAuthorization(req, res, next);
 });
 
-//find by id first:
+//Initiallising API Routes
+var routes = require('./api/indexAPI')(_appExtensions);
 
-db.users.find(1, function (err, res) {
-    console.log("Find By Id");
-    console.log(res);
-});
+//Setting up server
+var server = app.listen(process.env.PORT || appConfig.nodeServerPortNo, function () {
+    var port = server.address().port;
+    console.log("App now running on port", port);
+ }); 
 
-//let's find by email:
-db.users.find({ email: "test@test.com" }, function (err, res) {
-    console.log("Search By Attribute");
-    console.log(res);
+
+// define the home page route, running index.html when server runs
+app.get('/', function (req, res) {
+    res.sendFile('/index.html');
 });

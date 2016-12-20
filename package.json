@@ -8,7 +8,8 @@
     "mysql": "^2.10.0",
     "body-parser": "^1.15.2",
 	"jsonwebtoken" : "^7.2.1",
-	"massive": "^2.5.0"
+	"massive": "^2.5.0",
+	"moment": "^2.16.0"
   },
   "devDependencies": {},
   "scripts": {
