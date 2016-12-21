@@ -20,6 +20,12 @@ module.exports = function (appExtensions) {
 
 	api.genericMasterAPI = require('./genericMasterAPI')(appExtensions, db);
 	api.accountAPI = require('./accountAPI')(appExtensions, db);
+    
+    //Default Route
+    appExtensions.app.all('*', function (req, res) {
+        appExtensions.logger.warn("API route not found :" + req.path);
+        res.status(404).send({ "Success": false, "Message": "404", "Status": 404 });
+    });
 
 	return api;
 };

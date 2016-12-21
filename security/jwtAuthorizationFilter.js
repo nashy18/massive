@@ -21,7 +21,7 @@ module.exports = function (appExtensions) {
                 appExtensions.utility.jwt.verify(token, appExtensions.app.get('superSecret'), function (err, decoded) {                    
                     if (err) {
                         if (err == "TokenExpiredError: jwt expired") {
-                            console.log("JWT Token Error " + err);
+                            appExtensions.logger.error("JWT Token Error " + err);
                             return res.json({ Success: false, Message: 'Session has been expired.' });
                         }
                         else {
@@ -47,13 +47,13 @@ module.exports = function (appExtensions) {
             response.Success = false;
             response.Message = appExtensions.appConfig.recordReterived_Failed_Message;
             response.ErrorDetails = e;
-            console.log("Exception: " + e);
-            res.send(response);
+            appExtensions.logger.error("Exception: " + e);
         }
         //User Authentication -Ends
     }
 
     function unAuthorizedUser() {
+        appExtensions.logger.error("UnAuthorised User Access at: " + appExtensions.utility.moment().format('DD-MM-YYYY HH:MM'));
         var response = {};
         response.Success = false;
         response.Message = "UnAuthorised User";

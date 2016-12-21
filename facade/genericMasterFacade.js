@@ -19,9 +19,9 @@ module.exports = function (appExtensions) {
 	    catch (e) {
 	        response.Success = false;
 	        response.Message = appExtensions.appConfig.recordReterived_Failed_Message;
-	        response.ErrorDetails = "Exception: " + e;
+            response.ErrorDetails = "Exception: " + e;
+            appExtensions.logger.error("Exception: " + e);
 	        res.send(response);
-	        console.log("Exception: " + e);
 	    }
 	}
 
@@ -38,9 +38,9 @@ module.exports = function (appExtensions) {
 	    catch (e) {
 	        response.Success = false;
 	        response.Message = appExtensions.appConfig.recordReterived_Failed_Message;
-	        response.ErrorDetails = "Exception: " + e;
+            response.ErrorDetails = "Exception: " + e;
+            appExtensions.logger.error("Exception: " + e);
 	        res.send(response);
-	        console.log("Exception: " + e);
 	    }
 	}
 
@@ -54,9 +54,9 @@ module.exports = function (appExtensions) {
 	    catch (e) {
 	        response.Success = false;
 	        response.Message = appExtensions.appConfig.recordReterived_Failed_Message;
-	        response.ErrorDetails = "Exception: " + e;
+            response.ErrorDetails = "Exception: " + e;
+            appExtensions.logger.error("Exception: " + e);
 	        res.send(response);
-	        console.log("Exception: " + e);
 	    }
 	}
 
@@ -70,9 +70,9 @@ module.exports = function (appExtensions) {
 	    catch (e) {
 	        response.Success = false;
 	        response.Message = appExtensions.appConfig.recordReterived_Failed_Message;
-	        response.ErrorDetails = "Exception: " + e;
+            response.ErrorDetails = "Exception: " + e;
+            appExtensions.logger.error("Exception: " + e);
 	        res.send(response);
-	        console.log("Exception: " + e);
 	    }
 	}
 
@@ -87,9 +87,9 @@ module.exports = function (appExtensions) {
 	    catch (e) {
 	        response.Success = false;
 	        response.Message = appExtensions.appConfig.recordReterived_Failed_Message;
-	        response.ErrorDetails = "Exception: " + e;
+            response.ErrorDetails = "Exception: " + e;
+            appExtensions.logger.error("Exception: " + e);
 	        res.send(response);
-	        console.log("Exception: " + e);
 	    }
 	}
 
@@ -106,9 +106,9 @@ module.exports = function (appExtensions) {
 	    catch (e) {
 	        response.Success = false;
 	        response.Message = appExtensions.appConfig.recordReterived_Failed_Message;
-	        response.ErrorDetails = "Exception: " + e;
+            response.ErrorDetails = "Exception: " + e;
+            appExtensions.logger.error("Exception: " + e);
 	        res.send(response);
-	        console.log("Exception: " + e);
 	    }
 	}
 
@@ -122,9 +122,9 @@ module.exports = function (appExtensions) {
 	    catch (e) {
 	        response.Success = false;
 	        response.Message = appExtensions.appConfig.recordReterived_Failed_Message;
-	        response.ErrorDetails = "Exception: " + e;
+            response.ErrorDetails = "Exception: " + e;
+            appExtensions.logger.error("Exception: " + e);
 	        res.send(response);
-	        console.log("Exception: " + e);
 	    }
 	}
 
@@ -153,9 +153,9 @@ module.exports = function (appExtensions) {
 	    catch (e) {
 	        response.Success = false;
 	        response.Message = appExtensions.appConfig.recordReterived_Failed_Message;
-	        response.ErrorDetails = "Exception: " + e;
+            response.ErrorDetails = "Exception: " + e;
+            appExtensions.logger.error("Exception: " + e);
 	        res.send(response);
-	        console.log("Exception: " + e);
 	    }
 	}
 
@@ -179,9 +179,9 @@ module.exports = function (appExtensions) {
 	    catch (e) {
 	        response.Success = false;
 	        response.Message = appExtensions.appConfig.recordReterived_Failed_Message;
-	        response.ErrorDetails = "Exception: " + e;
+            response.ErrorDetails = "Exception: " + e;
+            appExtensions.logger.error("Exception: " + e);
 	        res.send(response);
-	        console.log("Exception: " + e);
 	    }
 	}
 
@@ -211,9 +211,9 @@ module.exports = function (appExtensions) {
 	    catch (e) {
 	        response.Success = false;
 	        response.Message = appExtensions.appConfig.recordReterived_Failed_Message;
-	        response.ErrorDetails = "Exception: " + e;
+            response.ErrorDetails = "Exception: " + e;
+            appExtensions.logger.error("Exception: " + e);
 	        res.send(response);
-	        console.log("Exception: " + e);
 	    }
 	}
 
@@ -240,9 +240,9 @@ module.exports = function (appExtensions) {
 	    catch (e) {
 	        response.Success = false;
 	        response.Message = appExtensions.appConfig.recordReterived_Failed_Message;
-	        response.ErrorDetails = "Exception: " + e;
+            response.ErrorDetails = "Exception: " + e;
+            appExtensions.logger.error("Exception: " + e);
 	        res.send(response);
-	        console.log("Exception: " + e);
 	    }
 	}
 
@@ -272,9 +272,9 @@ module.exports = function (appExtensions) {
 	    catch (e) {
 	        response.Success = false;
 	        response.Message = appExtensions.appConfig.recordReterived_Failed_Message;
-	        response.ErrorDetails = "Exception: " + e;
+            response.ErrorDetails = "Exception: " + e;
+            appExtensions.logger.error("Exception: " + e);
 	        res.send(response);
-	        console.log("Exception: " + e);
 	    }
 	}
 
@@ -304,9 +304,9 @@ module.exports = function (appExtensions) {
 	    catch (e) {
 	        response.Success = false;
 	        response.Message = appExtensions.appConfig.recordReterived_Failed_Message;
-	        response.ErrorDetails = "Exception: " + e;
+            response.ErrorDetails = "Exception: " + e;
+            appExtensions.logger.error("Exception: " + e);
 	        res.send(response);
-	        console.log("Exception: " + e);
 	    }
 	}
 
@@ -330,9 +330,9 @@ module.exports = function (appExtensions) {
 	    catch (e) {
 	        response.Success = false;
 	        response.Message = appExtensions.appConfig.recordReterived_Failed_Message;
-	        response.ErrorDetails = "Exception: " + e;
+            response.ErrorDetails = "Exception: " + e;
+            appExtensions.logger.error("Exception: " + e);
 	        res.send(response);
-	        console.log("Exception: " + e);
 	    }
 	}
 
