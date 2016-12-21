@@ -9,7 +9,7 @@ Application URL :
 https://massivejs.herokuapp.com/
 
 
-Steps for running the application,
+# Steps for running the application,
 
 1) Take a clone of below git hub repository,
 
