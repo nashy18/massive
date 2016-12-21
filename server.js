@@ -8,7 +8,7 @@ var app = express();
 var utility = require('./common/utils')(appConfig);
 
 //Getting logger module
-var logger = require('./common/logger')(appConfig);
+var logger = require('./common/logger')(appConfig, utility);
 
 //To Store AuthToken
 const _authToken = appConfig.authToken;
